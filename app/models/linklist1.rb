@@ -18,41 +18,41 @@ def print_values(list_node)
 end
 
 class Stack
-    attr_reader :data
+  attr_reader :data
 
-    def initialize
-        @data = nil
-    end
+  def initialize
+      @data = nil
+  end
 
-    # Push a value onto the stack
-    def push(value)
-      @data = LinkedListNode.new(value, @data)
-    end
+  # Push a value onto the stack
+  def push(value)
+    @data = LinkedListNode.new(value, @data)
+  end
 
-    # Pop an item off the stack.
-    # Remove the last item that was pushed onto the
-    # stack and return the value to the user
-    def pop
-      return print "nil\n" if @data.nil?
-      print "#{@data.value}\n"
-      @data = @data.next_node
-    end
+  # Pop an item off the stack.
+  # Remove the last item that was pushed onto the
+  # stack and return the value to the user
+  def pop
+    return print "nil\n" if @data.nil?
+    print "#{@data.value}\n"
+    @data = @data.next_node
+  end
 
-    def is_empty?
-      @data.nil?
-    end
+  def is_empty?
+    @data.nil?
+  end
 
 end
 
 def reverse_list(list)
-    stack = Stack.new
+  stack = Stack.new
 
-    while list
-        stack.push(list.value)
-        list = list.next_node
-    end
+  while list
+      stack.push(list.value)
+      list = list.next_node
+  end
 
-    return stack.data
+  return stack.data
 end
 
 node1 = LinkedListNode.new(37)
